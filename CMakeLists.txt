@@ -6,14 +6,15 @@ set(CMAKE_C_STANDARD 99)
 
 find_package(raylib REQUIRED)
 
-# --- engine ---
-add_executable(engine
+add_executable(cray
     src/main.c
 )
 
-target_link_libraries(${PROJECT_NAME} raylib dl)
+target_link_libraries(cray
+    raylib
+    dl
+)
 
-# --- game module (hot reload) ---
 add_library(game SHARED
     src/game.c
 )
